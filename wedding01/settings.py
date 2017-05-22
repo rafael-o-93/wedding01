@@ -13,8 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -27,7 +26,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "boiling-plateau-13807.herokuapp.com"]
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
 
 # Application definition
 
@@ -70,7 +68,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'wedding01.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -80,7 +77,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -100,7 +96,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -114,14 +109,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
-
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = [
-    os.path.join(PROJECT_ROOT, 'static'),
-]
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
