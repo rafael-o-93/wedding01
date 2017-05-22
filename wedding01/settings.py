@@ -25,7 +25,8 @@ SECRET_KEY = '(1y2yszh9gg-=e1^d@p8=j5eoorvayp=j=n2i(^dh#*2n%ag2n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["boiling-plateau-13807.herokuapp.com"]
+ALLOWED_HOSTS = ["localhost", "boiling-plateau-13807.herokuapp.com"]
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 # Application definition
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'wedding01.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['wedding01/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,5 +118,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_ROOT, 'static'),
+]
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')

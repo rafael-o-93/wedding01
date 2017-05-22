@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from wedding01.views import HomeView, AboutView, GalleryView, MailView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', HomeView.as_view(), name="index"),
+    url(r'^gallery/', GalleryView.as_view(), name="gallery"),
+    url(r'^mail/', MailView.as_view(), name="mail"),
+    url(r'^about/', AboutView.as_view(), name="about"),
 ]
