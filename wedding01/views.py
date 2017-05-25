@@ -23,6 +23,7 @@ class AboutView(TemplateView):
 
 class GalleryView(TemplateView):
     template_name = 'gallery.html'
+    #easter_egg_matheus_eh_burro_pra_caraleo
 
     def get(self, request, *args, **kwargs):
         context = {
