@@ -55,6 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="header">
             <div class="container">
                 <div class="header-top-grids">
+                    http://scriptgenerator.net/really-simple-embed-audio-player-script/
                     <div class="agileits-logo">
                         <h1><a href="{% url 'index' %}">WF <span>Wllysses & Fabricia</span></a></h1>
                     </div>
@@ -291,6 +292,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="clearfix"></div>
         </div>
+        <audio controls autoplay preload="metadata" style=" width:300px;">
+            <source src="{% static 'audio/sonhomeu-marcha-nupcial-abc274.mp3' %}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br/>
+
     </div>
 </footer>
 <!-- //footer -->
